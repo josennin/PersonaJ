@@ -45,4 +45,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="text" name="nombre" value="<?php echo $friend['nombre']; ?>" required>
         <select name="arcano_id" required>
             <option value="<?php echo $friend['arcano_id']; ?>"><?php echo $friend['arcano_id']; ?></option>
-            <?php foreach ($available_arcanos as $
+            <?php foreach ($available_arcanos as $arcano): ?>
+                <option value="<?php echo $arcano['nombre']; ?>"><?php echo $arcano['nombre']; ?></option>
+            <?php endforeach; ?>
+        </select>
+        <input type="number" name="nivel_afinidad" value="<?php echo $friend['nivel_afinidad']; ?>" required>
+        <button type="submit">Actualizar</button>
+    </form>
+</body>
+</html>
